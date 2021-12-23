@@ -88,24 +88,25 @@ body {
     height: 40px;
     width: 300px;
     font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .text {
-    padding: 7px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 300px;
+    height: 40px;
 }
 
 .progress-done {
-    margin-top: -43px;
     color: #fff;
     background: linear-gradient(-60deg, var(--blue9), var(--crimson8), var(--blue9), var(--pink9));
     background-size: 400% 400%;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
     transition: 1s ease;
     animation: gradient 60s ease infinite;
