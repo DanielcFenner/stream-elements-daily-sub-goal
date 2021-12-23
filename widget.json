@@ -1,0 +1,22 @@
+{
+    "subGoal": {
+      "type": "number",
+      "label": "Daily Sub Goal",
+      "value": 1,
+      "min": 0,
+      "step": 1
+    },
+    "barColour": {
+      "type": "color",
+      "label": "colour",
+      "value": 1,
+      "min": 0,
+      "step": 1
+    },
+    "widgetName": {
+      "label": "Simple Daily Sub Goal by @danielfenner",
+      "type": "hidden",
+      "value": "",
+      "group": "About"
+    }
+  }
