@@ -6,4 +6,4 @@ Wasn't too happy with the options offered for daily sub goal widgets within stre
 
 * Figure out how to align everything without weird margin and padding
 * Figure out how to use JS to manipulate the percentage
-* Add fields for color select & sub goal
+* Add fields for color select & sub goal (look here for info: https://github.com/StreamElements/widgets/blob/master/CustomCode.md )
