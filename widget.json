@@ -6,9 +6,16 @@
       "min": 0,
       "step": 1
     },
+    "cornerStyle": {
+        "type": "number",
+        "label": "Corner Style",
+        "value": 1,
+        "min": 0,
+        "step": 1
+      },
     "barColour": {
       "type": "color",
-      "label": "colour",
+      "label": "Colour",
       "value": 1,
       "min": 0,
       "step": 1
