@@ -3,33 +3,33 @@
       "type": "number",
       "label": "Daily Sub Goal",
       "value": 1,
-      "min": 0,
+      "min": 1,
+      "max": 999,
       "step": 1
     },
     "cornerStyle": {
         "type": "dropdown",
         "label": "Corner Style",
-        "value": "Rounded",
+        "value": "8px",
         "options": {
-            "squared": "Squared",
-            "rounded": "Rounded",
-            "fullround": "Full Round"
+            "0px": "Squared",
+            "8px": "Rounded",
+            "100px": "Full Round"
         }
       },
-      "barColour": {
-        "type": "dropdown",
-        "label": "Bar Colour",
-        "value": "Blue",
-        "options": {
-            "blue": "Blue",
-            "purple": "Purple",
-            "orange": "Orange"
-        }
+      "colour1": {
+        "type": "colorpicker",
+        "label": "Bar Colour 1",
+        "value": "#ab4aba"
+      },
+      "colour2": {
+        "type": "colorpicker",
+        "label": "Bar Colour 2",
+        "value": "#0091ff"
       },
     "widgetName": {
       "label": "Simple Daily Sub Goal by @danielfenner",
       "type": "hidden",
-      "value": "",
-      "group": "About"
+      "value": ""
     }
   }
