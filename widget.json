@@ -7,19 +7,25 @@
       "step": 1
     },
     "cornerStyle": {
-        "type": "number",
+        "type": "dropdown",
         "label": "Corner Style",
-        "value": 1,
-        "min": 0,
-        "step": 1
+        "value": "Rounded",
+        "options": {
+            "squared": "Squared",
+            "rounded": "Rounded",
+            "fullround": "Full Round"
+        }
       },
-    "barColour": {
-      "type": "color",
-      "label": "Colour",
-      "value": 1,
-      "min": 0,
-      "step": 1
-    },
+      "barColour": {
+        "type": "dropdown",
+        "label": "Bar Colour",
+        "value": "Blue",
+        "options": {
+            "blue": "Blue",
+            "purple": "Purple",
+            "orange": "Orange"
+        }
+      },
     "widgetName": {
       "label": "Simple Daily Sub Goal by @danielfenner",
       "type": "hidden",
