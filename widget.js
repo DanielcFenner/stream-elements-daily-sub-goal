@@ -2,28 +2,26 @@ const progress = document.querySelector(".progress-done");
 let subGoal;
 let subCount = 0;
 
+document.getElementById("sub-count").innerHTML = subCount;
+
 window.addEventListener("onWidgetLoad", function (obj) {
   const fieldData = obj.detail.fieldData;
   subGoal = fieldData.subGoal;
 });
 
-document.getElementById("sub-count").innerHTML = subCount;
-
-const $testDiv = document.querySelector('#my-test-div');
-
 window.addEventListener("onEventReceived", (obj) => {
   const listener = obj.detail.listener;
   const data = obj.detail.event;
 
-  if (listener !== 'subscriber-latest' || data.type !== 'subscriber') {
+  if (listener !== 'subscriber-latest' || data.type !== 'subscriber' || data.bulkGifted == true) {
     return;
   }
 
   subCount++;
   document.getElementById("sub-count").innerHTML = subCount;
 
-  subPercent = (subCount / subGoal) * 100
-  cssWidth = subPercent + "%";
+  const subPercent = (subCount / subGoal) * 100
+  const cssWidth = subPercent + "%";
   if (subPercent <= 5) {
     progress.style.height = "40%"
   } else if (subPercent >= 5 && subPercent <= 10) {
