@@ -1,27 +1,37 @@
 const progress = document.querySelector('.progress-done');
+let subGoal;
+let subCount = 0;
 
-progress.style.width = progress.getAttribute('data-done') + '%';
+window.addEventListener('onWidgetLoad', function (obj) {
+  const fieldData = obj.detail.fieldData;
+  subGoal = fieldData.subGoal;    
+});
 
-const SUBGOAL = fieldData.subGoal
-const SUBCOUNT = 0;
+document.getElementById("sub-count").innerHTML = " " + subCount;
+
 
     window.addEventListener('onEventReceived', obj => {
-        let { event, listener } = obj.detail
-        if (!event) return
+      const listener = obj.detail.listener;
+      const data = obj["detail"]["event"];
       
-        const type = listener.split('-')[0]
-      
-        switch(type) {
-          case EVENT.FOLLOWER: addFollow()
-            break
-          case EVENT.SUBSCRIBER: addSub()
-            break
-          default: return
+      if (listener === "subscriber-latest") { 
+        subCount += data["amount"]
+        document.getElementById("sub-count").innerHTML = subCount;
+        subPercent = (subCount / subGoal) * 100
+        cssWidth = subPercent + "%";
+        if (subPercent <= 5) {
+          progress.style.height = "30%"
+        } else if (subPercent >= 5 && subPercent <= 10) {
+          progress.style.height = "70%"
+        } else {
+          progress.style.height = "100%"
         }
-      })
-
-      function addSub() {
-        subCount++
+        progress.style.width = cssWidth;
       }
 
-      console.log(SUBGOAL)
+      });
+
+      data["subscriber-session"]["count"]
+
+
+      
