@@ -7,7 +7,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
   subGoal = fieldData.subGoal;    
 });
 
-document.getElementById("sub-count").innerHTML = " " + subCount;
+document.getElementById("sub-count").innerHTML = subCount;
 
 
     window.addEventListener('onEventReceived', obj => {
@@ -20,9 +20,9 @@ document.getElementById("sub-count").innerHTML = " " + subCount;
         subPercent = (subCount / subGoal) * 100
         cssWidth = subPercent + "%";
         if (subPercent <= 5) {
-          progress.style.height = "30%"
+          progress.style.height = "40%"
         } else if (subPercent >= 5 && subPercent <= 10) {
-          progress.style.height = "70%"
+          progress.style.height = "75%"
         } else {
           progress.style.height = "100%"
         }
