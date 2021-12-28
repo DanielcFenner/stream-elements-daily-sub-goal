@@ -15,7 +15,11 @@ window.addEventListener('onEventReceived', obj => {
   const data = obj["detail"]["event"];
 
   if (listener === "subscriber-latest") {
-    subCount += data["amount"]
+
+    if (data["type"] == "subscriber") {
+      subCount++;
+    }
+
     document.getElementById("sub-count").innerHTML = subCount;
     subPercent = (subCount / subGoal) * 100
     cssWidth = subPercent + "%";
