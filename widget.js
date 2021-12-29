@@ -1,51 +1,40 @@
-const progress = document.querySelector(".progress-done");
+const $progress = document.querySelector(".progress-done");
 let subGoal;
 let subCount = 0;
 
-document.getElementById("sub-count").innerHTML = subCount;
+const updateSubcount = (subCount) => {
+  document.getElementById("sub-count").innerHTML = subCount;
+}
+
+const updateStyles = (subCount, subGoal) => {
+  const subPercent = (subCount / subGoal) * 100;
+
+  $progress.style.height =
+    subPercent <= 5
+      ? "40%"
+      : subPercent >= 5 && subPercent <= 10
+      ? "75%"
+      : "100%";
+  $progress.style.width = subPercent + "%";
+};
 
 window.addEventListener("onWidgetLoad", function (obj) {
-  const fieldData = obj.detail.fieldData;
-  subGoal = fieldData.subGoal;
+  subGoal = obj.detail.fieldData.subGoal;
 });
 
 window.addEventListener("onEventReceived", (obj) => {
   const listener = obj.detail.listener;
   const data = obj.detail.event;
 
-  if (listener !== 'subscriber-latest' || data.type !== 'subscriber' || data.bulkGifted === true) {
+  if (
+    listener !== "subscriber-latest" ||
+    data.type !== "subscriber" ||
+    data.bulkGifted === true
+  ) {
     return;
   }
 
   subCount++;
-  document.getElementById("sub-count").innerHTML = subCount;
-
-  const subPercent = (subCount / subGoal) * 100
-  const cssWidth = subPercent + "%";
-  if (subPercent <= 5) {
-    progress.style.height = "40%"
-  } else if (subPercent >= 5 && subPercent <= 10) {
-    progress.style.height = "75%"
-  } else {
-    progress.style.height = "100%"
-  }
-  progress.style.width = cssWidth;
+  updateSubcount(subCount);
+  updateStyles(subCount, subGoal);
 });
-
-// window.addEventListener('onSessionUpdate', function (obj) {
-//   const data = obj.detail.session;
-//   subCount = data["subscriber-session"]["count"];
-
-//   document.getElementById("sub-count").innerHTML = subCount;
-
-//   const subPercent = (subCount / subGoal) * 100
-//   const cssWidth = subPercent + "%";
-//   if (subPercent <= 5) {
-//     progress.style.height = "40%"
-//   } else if (subPercent >= 5 && subPercent <= 10) {
-//     progress.style.height = "75%"
-//   } else {
-//     progress.style.height = "100%"
-//   }
-//   progress.style.width = cssWidth;
-// });
