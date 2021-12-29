@@ -32,7 +32,7 @@ body {
     padding: 6px;
     color: #fff;
     margin: 15px 0px;
-    background-color: rgba(17,25,28,.25);
+    background-color: #011e323e;
     border-radius: {{cornerStyle}};
     height: 40px;
     width: 300px;
