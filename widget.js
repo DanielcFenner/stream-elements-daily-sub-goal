@@ -13,7 +13,7 @@ window.addEventListener("onEventReceived", (obj) => {
   const listener = obj.detail.listener;
   const data = obj.detail.event;
 
-  if (listener !== 'subscriber-latest' || data.type !== 'subscriber' || data.bulkGifted == true) {
+  if (listener !== 'subscriber-latest' || data.type !== 'subscriber' || data.bulkGifted === true) {
     return;
   }
 
