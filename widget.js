@@ -31,3 +31,21 @@ window.addEventListener("onEventReceived", (obj) => {
   }
   progress.style.width = cssWidth;
 });
+
+// window.addEventListener('onSessionUpdate', function (obj) {
+//   const data = obj.detail.session;
+//   subCount = data["subscriber-session"]["count"];
+
+//   document.getElementById("sub-count").innerHTML = subCount;
+
+//   const subPercent = (subCount / subGoal) * 100
+//   const cssWidth = subPercent + "%";
+//   if (subPercent <= 5) {
+//     progress.style.height = "40%"
+//   } else if (subPercent >= 5 && subPercent <= 10) {
+//     progress.style.height = "75%"
+//   } else {
+//     progress.style.height = "100%"
+//   }
+//   progress.style.width = cssWidth;
+// });
