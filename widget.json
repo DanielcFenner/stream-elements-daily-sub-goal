@@ -7,11 +7,6 @@
       "max": 999,
       "step": 1
     },
-    "fontName": {
-        "type": "googleFont",
-        "label": "Font",
-        "value": "Poppins"
-      },
     "cornerStyle": {
         "type": "dropdown",
         "label": "Corner Style",
