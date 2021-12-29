@@ -38,3 +38,5 @@ window.addEventListener("onEventReceived", (obj) => {
   updateSubcount(subCount);
   updateStyles(subCount, subGoal);
 });
+
+updateSubcount(subCount);
