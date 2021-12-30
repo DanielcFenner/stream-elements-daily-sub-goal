@@ -64,3 +64,16 @@ body {
 .p1 {
     color: #000;
 }
+
+#particles-js {
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 300px;
+    height: 40px;
+  opacity: 0%;
+  transition: 1s ease;
+  
+}
+  
